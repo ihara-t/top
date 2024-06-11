@@ -218,10 +218,81 @@ footer p{
   padding: 0px 80px;
 }
 @media only screen and (max-width: 767px){
-	.header{
+	.element_05{
+    padding: 0;
+  }
+  .element_btn{
+    display: block;
+  }
+  .element_btn .btn_01{
+    margin-right: auto;
+  }
+  .element_btn .btn_pink{
+    width: auto;
+  }
+  .element_btn .btn_02{
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 10px;
+  }
+  .element_btn .btn_green{
+    width: auto;
+  }
+  .header_menu_tab{
+    display: block;
+  }
+  .header_menu_tab .menu_1{
+    padding: initial;
+  }
+  .header_menu_tab .menu_2{
+    padding: initial;
+  }
+  .header_menu_tab .menu_3{
+    padding: initial;
+  }
+  .header{
+    display: block;
+    padding: 20px 10px;
+  }
+  .header_button_1{
     display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 10px 10px;
+    place-content: center;
+    margin: 10px 0px;
+    width: auto;
+  }
+  .header_button_2{
+    display: flex;
+    place-content: center;
+    margin: 10px 0px;
+    width: auto;
+  }
+  .content{
+    display: block;
+  }
+  .ele_02_content{
+    display: block;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .content_02{
+    width: auto;
+    display: block;
+    flex-direction: column;
+    margin-top: 30px;
+  }
+  .content_03{
+    display: block;
+  }
+  .content_03 .content_right{
+    width: auto;
+  }
+  .element_04 .content_04{
+    width: auto;
+  }
+  .element_06{
+    padding-bottom: 10px;
+  }
+  .link{
+    display: flex;
   }
 }
