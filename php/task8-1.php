@@ -59,12 +59,12 @@
             echo '</form>';
         } else {
             echo '<form id="confirmForm" action="task8-2.php" method="post">';
-            echo '<p>お名前: ' . $yourname . '</p>';
-            echo '<p>フリガナ: ' . $hurigana . '</p>';
-            echo '<p>メールアドレス: ' . $mail . '</p>';
-            echo '<p>電話番号: ' . $tell . '</p>';
-            echo '<p>お問い合わせ項目: ' . $item . '</p>';
-            echo '<p>お問い合わせ内容: ' . $comment . '</p>';
+            echo "<p>お名前: $yourname</p>";
+            echo "<p>フリガナ: $hurigana</p>";
+            echo "<p>メールアドレス: $mail</p>";
+            echo "<p>電話番号: $tell</p>";
+            echo "<p>お問い合わせ項目: $item</p>";
+            echo "<p>お問い合わせ内容: $comment</p>";
 
             echo '<button type="submit" id="submitButton">送信</button>';
             echo '</form>';

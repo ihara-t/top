@@ -44,12 +44,22 @@
 img{
   width: 100%;
 }
-.comp {
+.comp{
   display: flex;
 }
-.comp .wrapper p{
-  font: blue;
+.comp.wrapper{
+  display: flex;
+  justify-content: center;
+}
+.comp .wrapper h1{
   font-size: xx-large;
+  padding: 50px 0px;
+}
+.comp .wrapper p{
+  
+  color: blue;
+  font-size: xx-large;
+  padding: 20px 0px;
 }
 .element_01{
   margin-top: 50px;
@@ -57,7 +67,6 @@ img{
 }
 .wrapper{
   max-width: 1200px;
-  width: 100%;
   margin-right: auto;
   margin-left: auto;
 }
