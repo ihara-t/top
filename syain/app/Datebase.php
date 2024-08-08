@@ -4,9 +4,9 @@ define('USER','root');
 define('PASS','root');
 
 
-class  Datebase
+class  Database
 {
-  privete $pdo;
+  private $pdo;
 
   private function connect()
   {
@@ -23,14 +23,14 @@ class  Datebase
       }
   }
 
-  function getallsyain()
+  function getAllsyain()
   {
     try{
       $this->connect();
       $stmt = $this->pdo->query("SELECT id, name FROM syain ORDER BY id;");
-      $members = $stmt->fetchALL();
+      $members = $stmt->fetchAll();
       return $members;
-    }catch(PDOExeption $e){
+    }catch(PDOException $e){
       echo $e->getMessage().'<br>';
       exit;
     }

@@ -13,14 +13,13 @@ function show_top($heading = "社員一覧")
 </head>
 <body>
   <h1>{$heading}</h1>
-</body>
 TOP;
 }
 
-public function show_down($return =false)
+function show_down($return =false)
 {
   if($return == true){
-    echo'<button><a href="index.php">社員一覧に戻る</button>';
+    echo'<button><a href="index.php">社員一覧に戻る</a></button>';
   }
   echo <<<BOTTOM
   </body>
@@ -40,8 +39,8 @@ TABLE1;
   foreach($members as $member){
     echo <<<TABLE2
       <tr>
-        <th>($member[id])</th>
-        <td><a href="syain_edit.php?id={$member[id]}">{$member["name"]}</a></td>
+        <th>($member['id'])</th>
+        <td><a href="syain_edit.php?id={$member['id']}">{$member["name"]}</a></td>
       </tr>
 TABLE2;
 }
