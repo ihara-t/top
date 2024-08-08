@@ -34,14 +34,15 @@
         $staffs[0] = new Staff('佐藤 一郎', '31','男性');
         $staffs[1] = new Staff('山田 花子', '25','女性');
         $staffs[2] = new Staff('鈴木 次郎', '27','男性');
+        $staffs[3] = new Staff('鈴木 太郎', '27','男性');
+        
 
-        $staffs[0]->number();
-        $staffs[1]->number();
-        $staffs[2]->number();
-
-        $staffs[0]->show();
-        $staffs[1]->show();
-        $staffs[2]->show();
+      foreach($staffs as $staff ){
+        
+        $staff->number();
+        $staff->show();
+        
+      }
     ?>
 
 </body>

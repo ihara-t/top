@@ -1,3 +1,68 @@
+<?php
+try {
+    $pdo = new PDO(
+        'mysql:host=localhost;dbname=consumer;charset=utf8mb4',
+        'root',
+        'root',
+        [
+            PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+            PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+            PDO::ATTR_EMULATE_PREPARES => false
+        ]
+    );
+
+    // $pdo->query("DROP TABLE IF EXISTS contact");
+    // $pdo->query(
+    //     "CREATE TABLE contact(
+    //         id INT AUTO_INCREMENT PRIMARY KEY,
+    //         name VARCHAR(128),
+    //         hurigana VARCHAR(128),
+    //         mail VARCHAR(128),
+    //         tell INT,
+    //         item VARCHAR(64),
+    //         comment VARCHAR(1000)
+    //     )"
+    // );
+
+    $yourname = $_POST['yourname'];
+    $hurigana = $_POST['hurigana'];
+    $mail = $_POST['mail'];
+    $tell = $_POST['tell'];
+    $item = $_POST['item'];
+    $comment = $_POST['comment'];
+    
+      // サニタイズ後の値を確認（デバッグ用）
+      echo "名前: $yourname<br>";
+      echo "ふりがな: $hurigana<br>";
+      echo "メール: $mail<br>";
+      echo "電話番号: $tell<br>";
+      echo "項目: $item<br>";
+      echo "コメント: $comment<br>";
+
+    $stmt = $pdo->prepare("INSERT INTO contact (name, hurigana, mail, tell, item, comment) VALUES (?, ?, ?, ?, ?, ?);");
+    $stmt->bindParam(1, $yourname, PDO::PARAM_STR);
+    $stmt->bindParam(2, $hurigana, PDO::PARAM_STR);
+    $stmt->bindParam(3, $mail, PDO::PARAM_STR);
+    $stmt->bindParam(4, $tell, PDO::PARAM_INT);
+    $stmt->bindParam(5, $item, PDO::PARAM_STR);
+    $stmt->bindParam(6, $comment, PDO::PARAM_STR);
+    $res = $stmt->execute();
+
+    // if ($res) {
+    //     echo "データが正常に挿入されました。";
+    // } else {
+    //     $errorInfo = $stmt->errorInfo();
+    //     echo "データの挿入に失敗しました: " . htmlspecialchars($errorInfo[2]);
+    // }
+
+} catch(PDOException $e) {
+    echo "PDOException: " . $e->getMessage() . '<br>';
+    exit;
+}
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>
