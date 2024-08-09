@@ -31,14 +31,13 @@ try {
     $item = $_POST['item'];
     $comment = $_POST['comment'];
     
-    // サニタイズ後の値を確認（デバッグ用）
+    // デバッグ用
     echo "名前: $yourname<br>";
     echo "ふりがな: $hurigana<br>";
     echo "メール: $mail<br>";
     echo "電話番号: $tell<br>";
     echo "項目: $item<br>";
     echo "コメント: $comment<br>";
-    // var_dump($errors);
     
     $stmt = $pdo->prepare("INSERT INTO contact (name, hurigana, mail, tell, item, comment) VALUES (?, ?, ?, ?, ?, ?);");
     $stmt->bindParam(1, $yourname, PDO::PARAM_STR);
@@ -49,26 +48,27 @@ try {
     $stmt->bindParam(6, $comment, PDO::PARAM_STR);
     $res = $stmt->execute();
 
-    // if($res){
-    //     header('Location: task9-1.php');
-    //     exit;
-    // } else{
-    //     header('Location: task8-1.php');
-    //     exit;
-    // }
-
+    
     // if ($res) {
-    //     echo "データが正常に挿入されました。";
-    // } else {
-    //     $errorInfo = $stmt->errorInfo();
-    //     echo "データの挿入に失敗しました: " . htmlspecialchars($errorInfo[2]);
-    // }
-
-} catch(PDOException $e) {
-    echo "PDOException: " . $e->getMessage() . '<br>';
-    exit;
-}
-
+        //     echo "データが正常に挿入されました。";
+        // } else {
+            //     $errorInfo = $stmt->errorInfo();
+            //     echo "データの挿入に失敗しました: " . htmlspecialchars($errorInfo[2]);
+            // }
+            // if($res){
+            //     header('Location: task9-1-1.php');
+            //     exit;
+            // } else{
+            //     header('Location: task8-1.php');
+            //     exit;
+            // }
+            
+        } catch(PDOException $e) {
+            echo "PDOException: " . $e->getMessage() . '<br>';
+            header('Location: task8-1.php');
+            exit;
+        }
+        
 ?>
 
 
@@ -101,6 +101,14 @@ try {
         <img src="mv.png" alt="">
     </div>
     <main>
+    <form action="task8-1.php" method="post">
+                    <?php if (!empty($errors)): ?>
+                        <div class="error">
+                            <?php foreach ($errors as $error): ?>
+                                <p><?= $error ?></p>
+                                <?php endforeach; ?>
+                            </div>
+                            <?php endif; ?>
         <section class="comp">
             <div class="wrapper">
                 <h1>お問い合わせ</h1>

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contactページ|HP制作</title>
+  <link rel="stylesheet" href="stylesheet.css">
+  <link rel="stylesheet" href="reset.css">
+</head>
+<body>
+  <header>
+    <div class="header">
+      <h1>ここには会社名が入ります</h1>
+      <div class="header_button_box">
+      <a href="#" class="header_button_1">ボタン01</a>
+      <a href="#" class="header_button_2">ボタン02</a>
+      </div>
+    </div>
+    <div class="header_menu_tab">
+      <a href="#" class="menu_1">メニュー01</a>
+      <a href="#" class="menu_2">メニュー02</a>
+      <a href="#" class="menu_3">メニュー03</a>
+      </div>
+  </header>
+  <div class="pic">
+    <img src="mv.png" alt="">
+  </div>
+  <main>
+    <section class="element_01">
+      <div class="wrapper">
+        <h1>お問い合わせ</h1>
+        <p>お問い合わせや業務内容に関するご質問は、電話またはこちらのお問い合わせフォームより承っております。<br>後ほど担当者よりご連絡させていただきます。</p>
+      </div>
+    </section>
+    <section class="contact">
+
+      <div class="wrapper">
+        <form action="task8-1.php" method="post">
+          
+          <div class="contact_01">
+            <div class="contact_left">
+              <h3>お名前</h3>
+            </div>
+            <div class="Required">
+              <h3>必須</h3>
+            </div>
+            <div class="contact_input">
+              <input type="text" value="" placeholder="山田太郎" name="yourname" class="textform">
+            </div>
+          </div>
+          <div class="contact_01">
+            <div class="contact_left">
+              <h3>フリガナ</h3>
+            </div>
+            <div class="Required">
+              <h3>必須</h3>
+            </div>
+            <div class="contact_input">
+              <input type="text" value="" placeholder="ヤマダタロウ" name="hurigana" class="textform">
+            </div>
+          </div>
+          <div class="contact_01">
+            <div class="contact_left">
+              <h3>メールアドレス</h3>
+            </div>
+            <div class="Required">
+              <h3>必須</h3>
+            </div>
+            <div class="contact_input">
+              <input type="text" value="" placeholder="info@fast-creademy.jp" name="mail" class="textform">
+            </div>
+          </div>
+          <div class="contact_01">
+            <div class="contact_left">
+              <h3>電話番号</h3>
+            </div>
+            <div class="Required">
+              <h3>必須</h3>
+            </div>
+            <div class="contact_input">
+              <input type="text" value="" placeholder="info@fast-creademy.jp" name="tell" class="textform">
+            </div>
+          </div>
+          <div class="contact_01">
+            <div class="contact_left">
+              <h3>お問い合わせ項目</h3>
+            </div>
+            <div class="Required">
+              <h3>必須</h3>
+            </div>
+            <div class="contact_input">
+              <select name="item">
+                <option value="a" selected>選択してください</option>
+                <option value="b">b</option>
+                <option value="c">c</option>
+              </select>
+            </div>
+          </div>
+          <div class="contact_01">
+            <div class="contact_left">
+              <h3>お問い合わせ内容</h3>
+            </div>
+            <div class="Required">
+              <h3>必須</h3>
+            </div>
+            <div class="contact_area">
+              <textarea id="comment" name="comment" placeholder="こちらにお問いあわせ内容をご記入ください" class="textarea_form"></textarea>
+            </div>
+          </div>
+          <div class="contact_01">
+            <div class="contact_left">
+              <h3>個人情報保護方針</h3>
+            </div>
+            <div class="Required">
+              <h3>必須</h3>
+            </div>
+            <div class="personal_check">
+              <input id="personal information" type="checkbox" name="personal" value="個人情報保護方針"><label for="personal information"><a href="#" class="personal_link">個人情報保護方針</a>に同意します。</label>
+            </div>
+          </div>
+          <div class="btn_02">
+            <input type="submit" class="btn_green" value="確認"> 
+          </div>
+        </form>
+      </div>
+    </section>
+    <!-- <section class="send_btn">
+    </section> -->
+    <section class="element_btn">
+      <div class="btn_01">
+        <h3>こちらからご購入ください</h3>
+        <a href="#" class="btn_pink"> ネットショップ</a>
+      </div>
+      <div class="btn_02">
+        <h3>お気軽にお問い合せください</h3>
+        <a href="#" class="btn_green"> お問い合わせ</a>
+      </div>
+    </section>
+    <section class="element_05"> 
+      <div class="wrapper">
+        <h3 class="ele_05_h3">ここには会社名が入ります</h3>
+        <p class="ele_05_p">住所が入ります<br>03-1234-5678<br>営業時間：9:00～18:00</p>
+      </div>
+    </section>
+    <section class="element_06">
+    <div class="element_link">
+      <a href="#" class="link">リンク01</a>
+      <a href="#" class="link">リンク02</a>
+      <a href="#" class="link">リンク03</a>
+      <a href="#" class="link">リンク04</a>
+      <a href="#" class="link">リンク05</a>
+      <a href="#" class="link">リンク06</a>
+      <a href="#" class="link">リンク07</a>
+    </div>
+    </section>
+  </main>
+  <footer>
+    <p>ここには会社名が入ります@copyright</p>
+  </footer>
+</body>
+</html>

@@ -1,4 +1,6 @@
 <?php
+var_dump($_POST);
+
 $yourname = $_POST['yourname'];
 $hurigana = $_POST['hurigana'];
 $mail = $_POST['mail'];
@@ -28,70 +30,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $errors[] = "お問い合わせ内容を入力してください。";
     }
 
-    if (!empty($errors)) {
-        header('Location: task8-1.php');
-        // exit();
-    } else {
+    if (empty($errors)) {
         header('Location: task9-1.php');
-        // exit();
+        exit();
+    } else {
+        header('Location: task8-1.php');
+        exit();
     }
     // var_dump($errors);
 }
 
-
-
-// if (!empty($errors)) {
-    //     echo '<div class="error">';
-    //     foreach ($errors as $error) {
-        //         echo '<p>' . $error . '</p>';
-        //     }
-        //     echo '</div>';
-        //     echo '<form action="indextest.html" method="post">';
-        //     echo "<p>お名前: $yourname</p>";
-        //     echo "<p>フリガナ: $hurigana</p>";
-        //     echo "<p>メールアドレス: $mail</p>";
-        //     echo "<p>電話番号: $tell</p>";
-        //     echo "<p>お問い合わせ項目: $item</p>";
-        //     echo "<p>お問い合わせ内容: $comment</p>";
-        //     echo '<button type="submit">確認</button>';
-        //     echo '</form>';
-        // } else {
-            //     echo '<form id="confirmForm" action="task8-2.php" method="post">';
-            //     echo "<p>お名前: $yourname</p>";
-            //     echo "<p>フリガナ: $hurigana</p>";
-            //     echo "<p>メールアドレス: $mail</p>";
-            //     echo "<p>電話番号: $tell</p>";
-            //     echo "<p>お問い合わせ項目: $item</p>";
-            //     echo "<p>お問い合わせ内容: $comment</p>";
-            
-            //     echo '<button type="submit" id="submitButton">送信</button>';
-            //     echo '</form>';
-            // }
-            
-            // try{
-                //     $pdo = new PDO(
-                    //     //DSN(Data Source Name)
-                    //     'mysql:host=localhost;dbname=consumer;charset=utf8mb4',
-                    //     //user
-                    //     'root',
-                    //     //pass
-                    //     'root'
-                    //     );
-                    
-                    //     $PDO ->quary("DROP TABLE IF EXISTS contact");
-                    //     $PDO->quary("
-                    //         "CREATE TABLE contact(
-                        //             id      INT PRIMARY KEY,
-                        //             name    VARCHAR(128),
-                        //             hurigana    VARCHAR(128),
-                        //             mail    VARCHAR(128),
-                        //             tell    INT,
-                        //             item    VARCHAR(64),
-                        //             comment VARCHAR(1000),
-                        //         )
-                        //     )
-                        // }
-                        ?>
+?>
 <!DOCTYPE html>
 <html lang="ja">
     <head>
@@ -124,7 +73,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <div class="wrapper">
                 <form action="task9-1.php" method="post">
                     <?php if (!empty($errors)): ?>
-                        <a href="task8-1.php"></a>
                         <div class="error">
                             <?php foreach ($errors as $error): ?>
                                 <p><?= $error ?></p>
@@ -253,4 +201,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <p>ここには会社名が入ります@copyright</p>
     </footer>
 </body>
+<form action="task9-1.php" method="post">
 </html>
