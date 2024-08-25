@@ -8,7 +8,7 @@ function get_error()
 {
   $error ="";
   if(isset($_GET["error"])){
-    $error = $GET["error"];
+    $error = $_GET["error"];
   }
   return $error;
 }

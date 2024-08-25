@@ -30,13 +30,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $errors[] = "お問い合わせ内容を入力してください。";
     }
 
-    if (empty($errors)) {
-        header('Location: task9-1.php');
-        exit();
-    } else {
-        header('Location: task8-1.php');
-        exit();
-    }
+    // if (empty($errors)) {
+    //     header('Location: task9-1.php');
+    //     exit();
+    // } else {
+    //     header('Location: task8-1.php');
+    //     exit();
+    // }
     // var_dump($errors);
 }
 
@@ -71,7 +71,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <main>
         <section class="contact">
             <div class="wrapper">
-                <form action="task9-1.php" method="post">
+                <form action="<?php if (empty($errors)) {echo "task9-1.php";} else {echo "task8-1.php";} ?>" method="post">
                     <?php if (!empty($errors)): ?>
                         <div class="error">
                             <?php foreach ($errors as $error): ?>

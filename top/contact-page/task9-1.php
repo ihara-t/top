@@ -123,7 +123,7 @@ try {
             </div>
             <div class="btn_02">
                 <h3>お気軽にお問い合せください</h3>
-                <a href="#" class="btn_green"> お問い合わせ</a>
+                <a href="contact-page/index.html" class="btn_green">お問い合わせ</a>
             </div>
         </section>
         <section class="element_05"> 

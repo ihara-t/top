@@ -72,9 +72,21 @@ function show_form($id, $name, $age, $work, $old_id, $status, $button)
 FORM;
 }
 
+// function show_create()
+// {
+//   $error = get_error();
+//   show_form("","","","","","create","登録");
+// }
+
+//IDエラー時残るように更新
 function show_create()
 {
-  $error = get_error();
-  show_form("","","","","","create","登録");
+    $name = isset($_GET['name']) ? $_GET['name'] : '';
+    $age = isset($_GET['age']) ? $_GET['age'] : '';
+    $work = isset($_GET['work']) ? $_GET['work'] : '';
+    
+    $error = get_error();
+    show_form("", $name, $age, $work, "", "create", "登録");
 }
+
 ?>
