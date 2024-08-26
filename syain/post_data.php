@@ -26,6 +26,7 @@
 //             }
 //         }
 
+//更新・削除の追加
 require_once('common.php');
 
 if (isset($_POST['status'])) {
